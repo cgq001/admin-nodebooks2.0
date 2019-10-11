@@ -1,7 +1,6 @@
 <template>
     <!-- 留言审核列表 -->
     <div class="examine">
-        
         <!-- 查询结果 -->
             <el-table
                 :data="list"
@@ -16,14 +15,12 @@
                 label="头像"
                 width="80">
                     <template slot-scope="scope">
-                            <!-- <img :src="scope.row.imgage" style="width:30px;height:30px" /> -->
                             <el-image 
                             v-if="scope.row.imgage"
                                 style="width: 50px; height: 50px"
                                 src="scope.row.imgage" 
                                 >
                             </el-image>
-                            
                     </template>
                 </el-table-column>
                 <el-table-column
@@ -68,10 +65,13 @@
                         </template>
                     </el-table-column>
             </el-table>
+            <!-- 分页 -->
+            <Page :total='total' :pageSize='pageList.rows' @changePages='changePages' />
     </div>
 </template>
 
 <script>
+import Page from '../layout/pages/Page' 
 export default {
     data(){
         return{
@@ -79,7 +79,8 @@ export default {
             pageList:{
                 page: 1,
                 rows: 1
-            }
+            },
+            total:0
         }
     },
     created(){
@@ -95,15 +96,35 @@ export default {
             .then(res=>{
                 if(res.data.code === 0){
                     this.list=res.data.data
-                    console.log(this.list)
+                    this.total=res.data.total
                 }
             })
         },
-        handleAgree(){
-
+        handleAgree(index,row){
+            this.$http.post('setStateMsg',{
+                _id:row._id,
+                state: 1
+            })
+            .then(res=>{
+                if(res.data.code === 0){
+                    this.list.splice(index,1)
+                }
+            })   
         },
-        handleRefuse(){
-
+        handleRefuse(index,row){
+            this.$http.post('setStateMsg',{
+                _id:row._id,
+                state: 2
+            })
+            .then(res=>{
+                if(res.data.code === 0){
+                    this.list.splice(index,1)
+                }
+            })  
+        },
+        changePages(val){
+            this.pageList.page=val
+            this.info()
         }
     },
     filters:{
@@ -115,6 +136,9 @@ export default {
             }
         }
        
+    },
+    components:{
+        Page
     }
 }
 </script>
