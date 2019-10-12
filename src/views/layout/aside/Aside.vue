@@ -59,6 +59,7 @@
                             <span slot="title">设置</span>
                         </template>
                         <el-menu-item index="/resume">个人经历</el-menu-item>
+                        <el-menu-item index="/reception">网站设置</el-menu-item>
                         <el-menu-item index="/adminuser">后端用户管理</el-menu-item>
                     </el-submenu>
                 </el-menu>

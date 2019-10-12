@@ -59,12 +59,15 @@ export default {
     },
     mounted:function(){
         let data= new Date()
+        let Time=data.getTime()
+        let r=86400000
+
         let m=data.getMonth()+1
         let day=data.getDate()
         let userDataRows=[]
         for(let i=0;i<7;i++){
             let str={}
-              str['日期']=m+'/'+((day-6)+i)
+              str['日期']=this.moment(Time-i*r).format("MM/DD")
               str['步数']=this.rounds(1170,9960)
               userDataRows.push(str)
         }

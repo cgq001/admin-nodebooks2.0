@@ -56,12 +56,18 @@ export default {
     },
     mounted:function(){
         let data= new Date()
+        let Time=data.getTime()
+        let r=86400000
+        
+       
         let m=data.getMonth()+1
         let day=data.getDate()
         let userDataRows=[]
         for(let i=0;i<7;i++){
             let str={}
-              str['日期']=m+'/'+((day-6)+i)
+            //m+'/'+((day-6)+i)
+            
+              str['日期']=this.moment(Time-i*r).format("MM/DD")
               str['阅读']=this.rounds(203,797)
               str['喜欢']=this.rounds(100,197)
               str['评论']=this.rounds(10,20)
@@ -72,7 +78,7 @@ export default {
         let AddUserDataRows=[]
         for(let i=0;i<7;i++){
             let str={}
-              str['日期']=m+'/'+((day-6)+i)
+              str['日期']=this.moment(Time-i*r).format("MM/DD")
               str['留言']=this.rounds(2,13)
               AddUserDataRows.push(str)
         }

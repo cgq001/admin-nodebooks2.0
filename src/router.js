@@ -53,6 +53,11 @@ export default new Router({
           component: ()=>import('./views/Resume/Resume.vue')
         },
         {
+          path: '/reception',  //网站设置
+          name: 'reception',
+          component: ()=>import("./views/Resume/Reception.vue")
+        },
+        {
           path: '/adminuser' ,  //后端用户管理
           name: 'adminuser',
           component: ()=>import('./views/Users/Adminuser.vue')

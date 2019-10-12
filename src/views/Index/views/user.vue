@@ -56,6 +56,8 @@ export default {
     },
     mounted:function(){
         let data= new Date()
+        let Time=data.getTime()
+        let r=86400000
         let year=data.getFullYear()
         let m=data.getMonth()+1
         let day=data.getDate()
@@ -63,7 +65,7 @@ export default {
         
         for(let i=0;i<7;i++){
             let str={}
-              str['日期']=m+'/'+((day-6)+i)
+              str['日期']=this.moment(Time-i*r).format("MM/DD")
               str['首次访问用户']=this.rounds(93,890)
               str['二次访问用户']=this.rounds(76,360)
               str['多次次访问用户']=this.rounds(52,191)
@@ -74,7 +76,7 @@ export default {
         let AddUserDataRows=[]
         for(let i=0;i<7;i++){
             let str={}
-              str['日期']=m+'/'+((day-6)+i)
+              str['日期']=this.moment(Time-i*r).format("MM/DD")
               str['新增用户']=this.rounds(5,38)
               AddUserDataRows.push(str)
         }
