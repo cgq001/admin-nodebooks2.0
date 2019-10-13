@@ -51,6 +51,9 @@ export default {
                 }
                 });
         }
+    },
+    created(){
+      
     }
 }
 </script>

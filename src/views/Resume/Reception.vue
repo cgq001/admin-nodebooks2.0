@@ -60,7 +60,18 @@
             </div>
             <div class="Reception-box">
                 <div class="Reception-box-left">
-                    邮箱密钥
+                    业务邮箱地址
+                </div>
+                <div class="Reception-box-center">
+                    {{list.eamils}}
+                </div>
+                <div class="Reception-box-right">
+                    <el-button type="primary" size="small" @click="undataSet('eamils')">修该</el-button>
+                </div>
+            </div>
+            <div class="Reception-box">
+                <div class="Reception-box-left">
+                    业务邮箱密钥
                 </div>
                 <div class="Reception-box-center">
                     
@@ -121,7 +132,10 @@
                 <el-form-item label="回复留言头像" :label-width="formLabelWidth" prop="nameimgs">
                     <el-input v-model="form.nameimgs" autocomplete="off"></el-input>
                 </el-form-item>
-                <el-form-item label="邮箱密钥" :label-width="formLabelWidth" prop="emailpassword">
+                <el-form-item label="业务邮箱" :label-width="formLabelWidth" prop="eamils">
+                    <el-input v-model="form.eamils" autocomplete="off"></el-input>
+                </el-form-item>
+                <el-form-item label="业务邮箱密钥" :label-width="formLabelWidth" prop="emailpassword">
                     <el-input v-model="form.emailpassword" autocomplete="off"></el-input>
                 </el-form-item>
                 <el-form-item label="是否开启留言功能" :label-width="formLabelWidth">
@@ -166,7 +180,10 @@ export default {
                     { required: true, message: '请输入回复留言头像', trigger: 'change' }
                 ],
                 emailpassword:[
-                    { required: true, message: '请输入邮箱密钥', trigger: 'change' }
+                    { required: true, message: '请输入业务邮箱密钥', trigger: 'change' }
+                ],
+                eamils:[
+                    { required: true, message: '请输入业务邮箱', trigger: 'change' }
                 ]
             },
             formLabelWidth: '150px',
@@ -180,8 +197,8 @@ export default {
         info(){
             this.$http.get('searchSetAll')
                 .then(res=>{
-                    console.log(res.data)
-                    if(res.data){
+                    console.log(res.data.data)
+                    if(res.data.data){
                         this.list=res.data.data
                     }else{
                         

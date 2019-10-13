@@ -63,6 +63,11 @@ export default new Router({
           component: ()=>import('./views/Users/Adminuser.vue')
         },
         {
+          path: '/pcuser' ,  //前台用户管理
+          name: 'adminuser',
+          component: ()=>import('./views/Users/Pcuser.vue')
+        },
+        {
           path: '/msgexamine',   //用户留言列表
           name: 'msgexamine',
           component: ()=>import('./views/message/msgexamine.vue')

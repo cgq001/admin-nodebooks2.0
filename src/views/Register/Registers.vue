@@ -182,6 +182,20 @@ export default {
            // console.log('这是手机')
             this.winOffs=true
         }
+    },
+    created(){
+         this.$http.get('searchSetAdmins')
+            .then(res=>{
+                console.log(res.data)
+                if(res.data.code === 0){
+                   
+                    if(!res.data.data.adminoffs){
+                        this.$router.replace({
+                            path: '/load'
+                        })
+                    }
+                }
+            })
     }
 }
 </script>

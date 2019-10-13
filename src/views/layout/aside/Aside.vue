@@ -61,6 +61,7 @@
                         <el-menu-item index="/resume">个人经历</el-menu-item>
                         <el-menu-item index="/reception">网站设置</el-menu-item>
                         <el-menu-item index="/adminuser">后端用户管理</el-menu-item>
+                        <el-menu-item index="/pcuser">前台用户管理</el-menu-item>
                     </el-submenu>
                 </el-menu>
                 </happy-scroll>
