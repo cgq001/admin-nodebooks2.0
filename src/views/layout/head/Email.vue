@@ -72,6 +72,8 @@ export default {
                     
                     if(res.test(this.emailForm.urls)){
                         let numbers=parseInt(Math.random()*100000)
+                        console.log(numbers)
+                        this.numbers=numbers
                         this.$http.post('/setUserEmail',{
                             emails:this.emailForm.urls,
                             numbers:numbers

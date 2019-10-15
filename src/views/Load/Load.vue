@@ -181,6 +181,7 @@ export default {
             .then(res=>{
                
                 if(res.data.code === 0){
+                    // console.log(res.data.data)
                     this.adminoffs=res.data.data.adminoffs
                 }
             })
