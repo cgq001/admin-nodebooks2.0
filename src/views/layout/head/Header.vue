@@ -145,6 +145,8 @@ export default {
                 if(!news){
                    // console.log('123') show-close
                     this.emailShow=true
+
+                    
                     this.emailShowDig=false  //强制不存在邮箱的输入邮箱
                     // this.emailShowDig=true //不强制不存在邮箱的输入邮箱
                 }else{
