@@ -39,7 +39,7 @@
                 </div>
                 <div class="foot">
                     
-                    <el-link type="danger" class="forgetPassword" href='/load'>现在去登陆？</el-link>
+                    <el-link type="danger" class="forgetPassword" href='#/load'>现在去登陆？</el-link>
                 </div>
                 <el-form-item>
                     <el-button :disabled='!offRulse' class="submits" type="primary" @click="submitForm('ruleForm')">立即登陆</el-button>

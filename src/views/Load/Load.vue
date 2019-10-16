@@ -26,7 +26,7 @@
                 <div class="foot">
                     <el-checkbox v-model="ruleForm.checked">七天免登陆</el-checkbox>
                     <el-link type="danger" @click="passwordBtns" class="forgetPassword">忘记密码？</el-link>
-                    <el-link type="primary" class="forgetPassword" href='/register' v-if="adminoffs">没有账号？现在去注册</el-link>
+                    <el-link type="primary" class="forgetPassword" href='#/register' v-if="adminoffs">没有账号？现在去注册</el-link>
                 </div>
                 <el-form-item>
                     <el-button :disabled='!offRulse'  class="submits" type="primary" @click="submitForm('ruleForm')">立即登陆</el-button>
