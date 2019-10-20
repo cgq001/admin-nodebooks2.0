@@ -23,7 +23,7 @@ function endLoading(){
 }
 
 let instance = axios.create({
-    baseURL:   'http://127.0.0.1:5002/admin/',  // 'https://api.caoxiaoyuan.cn/admin/'
+    baseURL:   'http://127.0.0.1:5002/admin/', // 'https://api.caoxiaoyuan.cn/admin/'
     timeout: 5000
   });
 
