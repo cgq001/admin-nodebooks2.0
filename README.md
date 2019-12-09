@@ -1,7 +1,7 @@
 # 博客2.0版本，管理后台
 
-管理后台预览地址: http://admin.caoxiaoyuan.cn/#/
-PC展示端预览地址: http://www.caoxiaoyuan.cn/#/
+
+PC展示端预览地址: http://www.nodebook.top/#/
 
 ## 初始化
 ```
